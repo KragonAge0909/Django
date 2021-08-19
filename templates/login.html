@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block body %}
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                <form class="form-horizontal" role="form" method="POST">
+                    {% csrf_token %}
+                    {% include 'includes/bs4_form_all.html' with form=form %}
+                    <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in"></i> Login</button>
+                </form>
+                <div class="text-center">
+                    <a class="d-block small mt-3" href="{% url 'signup' %}">Sign Up</a>
+                </div>
+                <div class="card-header">
+                <p>
+                    <b>email </b>: your-email@gmail.com <br>
+                    <b>password </b>: your password
+                </p>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript">
+        $("#id_username").attr("placeholder", "Enter Email address");
+        $("#id_password").attr("placeholder", "Enter Password");
+    </script>
+{% endblock %}

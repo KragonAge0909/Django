@@ -1,0 +1,154 @@
+{% load widget_tweaks %}
+
+{% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+{% endfor %}
+
+{% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+        {% for error in form.non_field_errors %}
+            {{ error }}
+        {% endfor %}
+    </div>
+{% endif %}
+<div class="form-group">
+    <div class="form-row">
+        <div class="col-md-6">
+            <div class="form-label-group">
+                {% if form.is_bound %}
+                    {% if form.visible_fields.0.errors %}
+                        {% render_field form.visible_fields.0 class="form-control is-invalid" %}
+                        {% for error in form.visible_fields.0.errors %}
+                            <div class="invalid-feedback">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {% render_field form.visible_fields.0 class="form-control is-valid" %}
+                    {% endif %}
+                {% else %}
+                    {% render_field form.visible_fields.0 class="form-control" %}
+                {% endif %}
+                {{ form.visible_fields.0.label_tag }}
+                <!-- {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %} -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-label-group">
+                {% if form.is_bound %}
+                    {% if form.visible_fields.1.errors %}
+                        {% render_field form.visible_fields.1 class="form-control is-invalid" %}
+                        {% for error in form.visible_fields.1.errors %}
+                            <div class="invalid-feedback">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {% render_field form.visible_fields.1 class="form-control is-valid" %}
+                    {% endif %}
+                {% else %}
+                    {% render_field form.visible_fields.1 class="form-control" %}
+                {% endif %}
+                {{ form.visible_fields.1.label_tag }}
+                <!-- {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %} -->
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-label-group">
+                {% if form.is_bound %}
+                    {% if form.visible_fields.2.errors %}
+                        {% render_field form.visible_fields.2 class="form-control is-invalid" %}
+                        {% for error in form.visible_fields.2.errors %}
+                            <div class="invalid-feedback">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {% render_field form.visible_fields.2 class="form-control is-valid" %}
+                    {% endif %}
+                {% else %}
+                    {% render_field form.visible_fields.2 class="form-control" %}
+                {% endif %}
+                {{ form.visible_fields.2.label_tag }}
+                <!-- {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %} -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-label-group">
+                {% if form.is_bound %}
+                    {% if form.visible_fields.3.errors %}
+                        {% render_field form.visible_fields.3 class="form-control is-invalid" %}
+                        {% for error in form.visible_fields.3.errors %}
+                            <div class="invalid-feedback">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {% render_field form.visible_fields.3 class="form-control is-valid" %}
+                    {% endif %}
+                {% else %}
+                    {% render_field form.visible_fields.3 class="form-control" %}
+                {% endif %}
+                {{ form.visible_fields.3.label_tag }}
+                <!-- {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %} -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-label-group">
+                {% if form.is_bound %}
+                    {% if form.visible_fields.4.errors %}
+                        {% render_field form.visible_fields.4 class="form-control is-invalid" %}
+                        {% for error in form.visible_fields.4.errors %}
+                            <div class="invalid-feedback">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {% render_field form.visible_fields.4 class="form-control is-valid" %}
+                    {% endif %}
+                {% else %}
+                    {% render_field form.visible_fields.4 class="form-control" %}
+                {% endif %}
+                {{ form.visible_fields.4.label_tag }}
+                <!-- {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %} -->
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- {% for field in form.visible_fields %}
+                <div class="col-md-6">
+                    <div class="form-label-group">
+                        {% if form.is_bound %}
+                            {% if field.errors %}
+                                {% render_field field class="form-control is-invalid" %}
+                                {% for error in field.errors %}
+                                    <div class="invalid-feedback">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                {% render_field field class="form-control is-valid" %}
+                            {% endif %}
+                        {% else %}
+                            {% render_field field class="form-control" %}
+                        {% endif %}
+                        {{ field.label_tag }}
+
+
+                        {% if field.help_text %}
+                            <small class="form-text text-muted">{{ field.help_text }}</small>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %} -->
